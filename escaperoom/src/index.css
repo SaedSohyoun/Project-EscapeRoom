@@ -1,0 +1,304 @@
+/* Algemene instellingen voor het gehele document */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Het lettertype voor een moderne uitstraling */
+    background-color: rgb(0, 0, 0); /* Donkere achtergrondkleur voor de body */
+    color: white; /* Witte tekst voor de leesbaarheid */
+    overflow-x: hidden; /* Voorkom horizontaal scrollen */
+  }
+  
+  
+  /* Root container voor volledige schermhoogte */
+  #root {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #121212;
+    flex-direction: column;
+  }
+  
+  /* ============================ STARTSCHERM STYLES ============================ */
+  
+  /* Startpagina container */
+  .start-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Zorgt ervoor dat de container het volledige scherm vult */
+    width: 100%; /* De breedte van de container vult het volledige scherm */
+    position: relative; /* Benodigde positionering voor overlay */
+    background-image: url('/img/begin.jpg'); /* Voeg hier je achtergrondafbeelding in */
+    background-size: cover; /* Zorgt ervoor dat de afbeelding het volledige scherm bedekt */
+    background-position: center; /* Centraal de afbeelding positioneren */
+    background-repeat: no-repeat; /* Voorkomt dat de afbeelding zich herhaalt */
+    overflow: hidden; /* Verhindert dat er een scrollbar verschijnt */
+    flex-direction: column; /* Zet de inhoud in een verticale kolom */
+    text-align: center; /* Zorgt ervoor dat tekst in het midden uitgelijnd is */
+    padding: 2rem;
+  }
+  
+  /* Overlay om de tekst leesbaar te maken */
+  .start-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparante zwarte overlay */
+    z-index: -1; /* Zet de overlay achter de tekst en inhoud */
+  }
+  
+  /* Titel in het midden van de pagina */
+  .start-screen h1 {
+    font-size: 3.5rem; /* Grootte van de titel */
+    font-weight: 700;
+    margin-bottom: 2rem; /* Ruimte onder de titel voor de knop */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Schaduw voor de titel */
+  }
+  
+  /* De knop onder de tekst */
+  .start-screen button {
+    background-color: black; /* Neonblauwe kleur voor de knop */
+    padding: 1.2rem 2.5rem;
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    margin-top: 2rem; /* Zorg ervoor dat er voldoende ruimte is tussen de knop en de tekst */
+  }
+  
+  /* Hover-effect voor de startknop */
+  .start-screen button:hover {
+    background-color: #00b8d4; /* Donkerder blauw bij hover */
+    transform: scale(1.05); /* Vergroot de knop bij hover */
+  }
+  
+  .start-screen button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Kleine aanpassingen voor kleinere schermen (zoals tablets of mobiele apparaten) */
+  @media (max-width: 768px) {
+    .start-screen h1 {
+      font-size: 2.5rem; /* Kleinere titel voor mobiele schermen */
+    }
+  
+    .start-screen button {
+      font-size: 1.5rem; /* Kleinere knop voor mobiele schermen */
+      padding: 1rem 2rem;
+    }
+  }
+  
+  
+  /* ============================ KAMER PAGINA STYLES ============================ */
+  
+  /* Styling voor de kamer-container */
+  .room-container {
+    width: 85vw;
+    max-width: 1200px;
+    max-height: 80vh; /* Stel een maximale hoogte in om de container scrollbaar te maken */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparante donkere achtergrond voor de kamer */
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px; /* Grote afgeronde hoeken */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Schaduw voor diepte */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    overflow-y: auto; /* Maakt de kamer-container scrollbaar */
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+  
+  .room-container:hover {
+    transform: scale(1.03); /* Vergroot de container bij hover */
+  }
+  
+  /* Room title styling */
+  .room-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff; /* Neonblauwe kleur voor de titel */
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Styling voor de timer */
+  .timer {
+    font-size: 1.8rem;
+    color: #76ff03; /* Neon groene kleur voor de timer */
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Puzzle container styling */
+  .puzzle-container {
+    background: rgba(33, 33, 33, 0.9); /* Donkergrijze achtergrond voor puzzels */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6); /* Schaduw voor diepte */
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .puzzle-container:hover {
+    transform: scale(1.02); /* Vergroting van puzzelcontainer bij hover */
+  }
+  
+  /* Styling voor de vraag van de puzzel */
+  .puzzle-question {
+    font-size: 1.4rem;
+    color: #ffffff; /* Witte tekst voor de vraag */
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  /* Styling voor inputvelden */
+  .puzzle-input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background-color: #1d1d1d;
+    color: #eaeaea;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease;
+  }
+  
+  .puzzle-input:focus {
+    background-color: #2c2c2c;
+    outline: none;
+    border: 2px solid #76ff03; /* Neon groene rand bij focus */
+  }
+  
+  .puzzle-input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Styling voor de indienen knop */
+  .puzzle-button {
+    background-color: #00e5ff; /* Neonblauwe knop */
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .puzzle-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  
+  .puzzle-button:not(:disabled):hover {
+    background-color: #00b8d4; /* Hover effect voor knoppen */
+  }
+  
+  /* Styling voor de "opgelost!" tekst */
+  .correct-answer {
+    font-size: 1.2rem;
+    color: #76ff03; /* Neon groene kleur */
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  
+  /* Knoppen voor de startpagina en kamer-overgangen */
+  .start-screen-button, .next-room-button {
+    background-color: #00e5ff; /* Neonblauwe knoppen */
+    padding: 1.2rem 2.5rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .start-screen-button:hover, .next-room-button:hover {
+    background-color: #00b8d4; /* Hover effect */
+  }
+  
+  .next-room-button {
+    background-color: #76ff03; /* Groene knop voor de volgende kamer */
+  }
+  
+  .next-room-button:hover {
+    background-color: #64dd17; /* Groene hover voor de volgende kamer */
+  }
+  
+  /* Verbergen van de scrollbar voor visuele netheid */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+
+
+
+  /* Stijl voor de puzzel knop om vraag te tonen/verbergen */
+button {
+    background-color: #000000; /* Blauwe kleur voor de knop */
+    color: white;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9; /* Donkerblauw bij hover */
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Verbergen van vraag inhoud */
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 10px;
+  }
+  
+  /* Styling voor inputveld */
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  input:disabled {
+    background-color: #f4f4f4;
+    cursor: not-allowed;
+  }
+  
+  button[type="submit"] {
+    margin-top: 10px;
+  }
